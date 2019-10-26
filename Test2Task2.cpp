@@ -50,17 +50,17 @@ int main(void) {
 	// Find max subarray of alternating values
 	for (i = 1; i < size; i++) {
 		if (A[i] == 1 && A[i - 1] == 0) {
-			subCtr++;		// If next value is alternated, add sub counter			
+			subCtr++;		// If prior value is alternated, add sub counter			
 		}
 		else if (A[i] == 0 && A[i - 1] == 1) {
-			subCtr++;		// If next value is alternated, add sub counter			
+			subCtr++;		// If prior value is alternated, add sub counter			
 		}
 		else {
 			// If we've reached a higher max subarray, save that value
 			if (subCtr != 0 && subCtr > saveCtr) {
 				index = i - subCtr;		// Lets us know where the list starts
 				saveCtr = subCtr;		// Save the max length counted
-				subCtr = 1;				// Reset our subCtr for next count (if needed)
+				subCtr = 1;			// Reset our subCtr for next count (if needed)
 			}			
 		}
 	}
